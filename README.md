@@ -22,7 +22,7 @@ Objectives
 * User Registration (Firebase Cloud)
 	* Choose dorm (mahallah)
 	* Choose block, level, room
-* A
+* A Push Notification 
 
 ### Screen Navigation
 LR
