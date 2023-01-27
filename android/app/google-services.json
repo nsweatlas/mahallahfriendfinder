@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "268151751569",
+    "project_id": "friendfinder-da07b",
+    "storage_bucket": "friendfinder-da07b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268151751569:android:3cb6a1ebf38d89a1805030",
+        "android_client_info": {
+          "package_name": "com.example.mahallahfriendfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268151751569-eqm0b4pk9fhl1ksdt9m8mco3ujmb90rm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuA_z7ftMXM18To66YDsE9CpbP-lKwFW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268151751569-eqm0b4pk9fhl1ksdt9m8mco3ujmb90rm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
