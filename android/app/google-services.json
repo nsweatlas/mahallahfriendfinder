@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:268151751569:android:3cb6a1ebf38d89a1805030",
+        "mobilesdk_app_id": "1:268151751569:android:ad47efe3de831ee7805030",
         "android_client_info": {
           "package_name": "com.example.mahallahfriendfinder"
         }
@@ -29,6 +29,13 @@
             {
               "client_id": "268151751569-eqm0b4pk9fhl1ksdt9m8mco3ujmb90rm.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "268151751569-tequaallsa5su8r0ovv34rd6mcn36bsl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mahallahfriendfinder"
+              }
             }
           ]
         }
