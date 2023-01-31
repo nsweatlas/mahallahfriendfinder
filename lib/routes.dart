@@ -1,8 +1,8 @@
 class Routes {
-  static const loginScreen = '/login_screen';
-  static const loginSuccessScreen = '/login_success_screen';
-  static const signUpScreen = '/signup_screen';
-  static const firstScreen = '/first_screen';
-  static const secondScreen = '/second_screen';
-  static const locationScreen = '/location_screen';
+  static const loginPage = '/pages/login_page';
+  static const loginSuccessPage = '/pages/loginsuccess_page';
+  static const signUpPage = '/pages/loginsignup_page';
+  static const roomPage = '/pages/room_page';
+  static const profilePage = '/pages/profile_page';
+  static const logOutPage = '/pages/logout_page';
 }

@@ -1,16 +1,20 @@
+import 'package:mahallahfriendfinder/room.dart';
+
 class Student {
   int matricNum;
   String name;
   String gender;
-  String dorm;
-  String dormBlock;
-  String roomNum;
+  int phoneNum;
+  Room roomNum;
 
   Student(
       {required this.matricNum,
       required this.name,
       required this.gender,
-      required this.dorm,
-      required this.dormBlock,
+      required this.phoneNum,
       required this.roomNum});
+
+  void setMatricNum(int matricNum) {
+    this.matricNum = matricNum;
+  }
 }
