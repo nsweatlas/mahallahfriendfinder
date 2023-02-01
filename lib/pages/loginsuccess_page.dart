@@ -60,11 +60,12 @@ class _LoginSuccessPageState extends State<LoginSuccessPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login Success'),
+        title: Text(isLogin ? 'Login Success' : 'Sign Up Success'),
         centerTitle: true,
       ),
       body: Container(
         alignment: Alignment.center,
+        padding: const EdgeInsets.all(30),
         child: Column(children: <Widget>[
           _welcomeText(isLogin),
           _continueButton(isLogin),

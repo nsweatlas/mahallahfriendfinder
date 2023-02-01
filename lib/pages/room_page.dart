@@ -31,13 +31,27 @@ class _RoomPageState extends State<RoomPage> {
   Widget build(BuildContext buildContext) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-      ),
+          automaticallyImplyLeading: false,
+          title: Text(widget.title),
+          centerTitle: true,
+          actions: <Widget>[
+            Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () {
+                    signOut();
+                  },
+                  child: const Icon(
+                    Icons.exit_to_app,
+                    size: 26.0,
+                  ),
+                )),
+          ]),
       body: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.all(30),
         child: Column(children: <Widget>[
           _userUid(),
-          _signOutButton(),
         ]),
       ),
     );
