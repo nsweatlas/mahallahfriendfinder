@@ -16,6 +16,7 @@ class _RoomPageState extends State<RoomPage> {
 
   Future<void> signOut() async {
     await Auth().signOut();
+    Navigator.pop(context);
   }
 
   Widget _userUid() {
@@ -29,7 +30,10 @@ class _RoomPageState extends State<RoomPage> {
   @override
   Widget build(BuildContext buildContext) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(
+        title: Text(widget.title),
+        centerTitle: true,
+      ),
       body: Container(
         child: Column(children: <Widget>[
           _userUid(),

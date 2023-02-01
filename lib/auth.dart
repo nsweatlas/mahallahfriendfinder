@@ -3,9 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
+  //user & state persistance
   User? get currentUser => _firebaseAuth.currentUser;
   Stream<User?> get authStateChange => _firebaseAuth.authStateChanges();
 
+  //email login
   Future<void> signInWithEmailAndPassword({
     required String email,
     required String password,
@@ -15,6 +17,7 @@ class Auth {
     //signInWithPhoneNumber only for web-based applications?
   }
 
+  //email sign up
   Future<void> createUserWithEmailAndPassword({
     required String email,
     required String password,

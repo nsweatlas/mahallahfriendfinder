@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mahallahfriendfinder/auth.dart';
-import 'package:mahallahfriendfinder/pages/room_page.dart';
+import 'package:mahallahfriendfinder/pages/loginsuccess_page.dart';
 import 'package:mahallahfriendfinder/pages/login_page.dart';
 
+// ignore: must_be_immutable
 class WidgetTree extends StatefulWidget {
-  const WidgetTree({Key? key}) : super(key: key);
+  WidgetTree({Key? key}) : super(key: key);
+  bool isLogin = true;
 
-  static const String _title = 'Mahallah Friend Finder';
+  void setIsLogin(bool isLogin) {
+    this.isLogin = isLogin;
+  }
+
+  bool getIsLogin() {
+    return isLogin;
+  }
 
   @override
   State<WidgetTree> createState() => _WidgetTreeState();
@@ -19,9 +27,15 @@ class _WidgetTreeState extends State<WidgetTree> {
       stream: Auth().authStateChange,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return const RoomPage(title: WidgetTree._title);
+          return LoginSuccessPage(
+            widgetTree: widget,
+          );
+          //return const RoomPage(title: WidgetTree._title);
         } else {
-          return const LoginPage();
+          return LoginPage(
+            isLogin: widget.isLogin,
+            widgetTree: widget,
+          );
         }
       },
     );
