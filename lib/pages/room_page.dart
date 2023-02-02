@@ -3,7 +3,7 @@ import 'package:mahallahfriendfinder/widgets/ui_widget.dart';
 import 'package:mahallahfriendfinder/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mahallahfriendfinder/room.dart';
-
+import 'logout_page.dart';
 import '../routes.dart';
 
 class RoomPage extends StatefulWidget {
@@ -33,8 +33,8 @@ class _RoomPageState extends State<RoomPage> {
                 padding: const EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
                   onTap: () {
-                    //signOut();
-                    Navigator.pop(context);
+                    signOut();
+                    Navigator.pushNamed(context, Routes.logOutPage);
                   },
                   child: Icon(
                     Icons.exit_to_app,

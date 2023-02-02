@@ -27,6 +27,7 @@ Widget entryField(
   );
 }
 
+//circleLoading
 Widget circleLoading(double? value) {
   return CircularProgressIndicator(
     value: value,
@@ -35,3 +36,5 @@ Widget circleLoading(double? value) {
     strokeWidth: 12,
   );
 }
+
+//linearLoading
