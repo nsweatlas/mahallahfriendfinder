@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mahallahfriendfinder/widget_tree.dart';
+import 'pages/login_page.dart';
+import 'pages/loginsuccess_page.dart';
 import 'routes.dart';
-import 'package:mahallahfriendfinder/pages/login_page.dart';
 import 'package:mahallahfriendfinder/pages/loginsignup_page.dart';
-import 'package:mahallahfriendfinder/pages/loginsuccess_page.dart';
 import 'package:mahallahfriendfinder/pages/room_page.dart';
 import 'package:mahallahfriendfinder/pages/profile_page.dart';
 import 'package:mahallahfriendfinder/pages/logout_page.dart';
@@ -18,12 +18,14 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  final String _title = 'Mahallah Friend Finder';
+  final String title = 'Mahallah Friend Finder';
+  final bool isLogin = true;
+  final double iconSize = 26.0;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: _title,
+      title: title,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.teal,
@@ -31,14 +33,20 @@ class MyApp extends StatelessWidget {
       home: WidgetTree(),
       // initialRoute: Routes.loginPage,
       routes: {
-        Routes.signUpPage: (context) => const SignUpPage(),
-        // Routes.loginPage: (context) => const LoginPage(),
-        // Routes.loginSuccessPage: (context) => const LoginSuccessPage(),
-        Routes.roomPage: (context) => RoomPage(
-              title: _title,
+        Routes.widgetTree: (context) => WidgetTree(),
+        Routes.loginPage: (context) => LoginPage(
+              isLogin: WidgetTree().isLogin,
+              widgetTree: WidgetTree(),
             ),
-        Routes.profilePage: (context) => const ProfilePage(
-              title: '',
+        Routes.loginSuccessPage: (context) => LoginSuccessPage(
+              widgetTree: WidgetTree(),
+            ),
+        Routes.signUpPage: (context) => const SignUpPage(),
+        Routes.roomPage: (context) => RoomPage(
+              title: title,
+            ),
+        Routes.profilePage: (context) => ProfilePage(
+              title: title,
             ),
         Routes.logOutPage: (context) => const LogoutPage(),
       },

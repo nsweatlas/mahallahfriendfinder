@@ -5,4 +5,5 @@ class Routes {
   static const roomPage = '/pages/room_page';
   static const profilePage = '/pages/profile_page';
   static const logOutPage = '/pages/logout_page';
+  static const widgetTree = '/widget_tree';
 }

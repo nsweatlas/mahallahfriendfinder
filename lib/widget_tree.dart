@@ -5,7 +5,10 @@ import 'package:mahallahfriendfinder/pages/login_page.dart';
 
 // ignore: must_be_immutable
 class WidgetTree extends StatefulWidget {
-  WidgetTree({Key? key}) : super(key: key);
+  WidgetTree({
+    super.key,
+  });
+
   bool isLogin = true;
 
   void setIsLogin(bool isLogin) {
@@ -30,7 +33,6 @@ class _WidgetTreeState extends State<WidgetTree> {
           return LoginSuccessPage(
             widgetTree: widget,
           );
-          //return const RoomPage(title: WidgetTree._title);
         } else {
           return LoginPage(
             isLogin: widget.isLogin,
