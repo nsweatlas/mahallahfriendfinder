@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mahallahfriendfinder/auth.dart';
-import 'package:mahallahfriendfinder/widget_tree.dart';
 import 'package:mahallahfriendfinder/widgets/ui_widget.dart';
+import 'package:mahallahfriendfinder/widget_tree.dart';
+import 'package:mahallahfriendfinder/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   final bool isLogin;
@@ -18,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
 
   String? errorMessage = '';
   bool isLogin = true;
+  bool visibilityObscured = true;
 
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
@@ -78,6 +79,9 @@ class _LoginPageState extends State<LoginPage> {
     return ElevatedButton(
         onPressed: () async {
           if (_formKey.currentState!.validate()) {
+            setState(() {
+              errorMessage = '';
+            });
             try {
               isLogin
                   ? signInWithEmailAndPassword()
@@ -147,6 +151,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     labelText: emailTitle,
                     hintText: emailTitle,
+                    prefixIcon: Icon(
+                      Icons.account_box,
+                      size: iconSize,
+                    ),
                   ),
                   validator: (text) {
                     if (text == null || text.isEmpty) {
@@ -162,15 +170,33 @@ class _LoginPageState extends State<LoginPage> {
                 TextFormField(
                   controller: _controllerPassword,
                   focusNode: passwordFocus,
+                  obscureText: visibilityObscured,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide:
-                          const BorderSide(color: Color(0xff000000), width: 1),
-                    ),
-                    labelText: passwordTitle,
-                    hintText: passwordTitle,
-                  ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xff000000), width: 1),
+                      ),
+                      labelText: passwordTitle,
+                      hintText: passwordTitle,
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        size: iconSize,
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            visibilityObscured = !visibilityObscured;
+                          });
+                        },
+                        icon: Icon(
+                          visibilityObscured
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          size: iconSize,
+                        ),
+                        padding: const EdgeInsets.only(right: 7),
+                      )),
                   validator: (text) {
                     if (text == null || text.isEmpty) {
                       passwordNull = true;

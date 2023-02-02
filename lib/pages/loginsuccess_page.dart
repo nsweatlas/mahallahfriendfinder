@@ -1,8 +1,13 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mahallahfriendfinder/auth.dart';
+import 'package:mahallahfriendfinder/main.dart';
+import 'package:mahallahfriendfinder/pages/room_page.dart';
+import 'package:mahallahfriendfinder/widgets/ui_widget.dart';
 import 'package:mahallahfriendfinder/widget_tree.dart';
+import 'package:mahallahfriendfinder/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../routes.dart';
+import 'loginsignup_page.dart';
 
 // ignore: must_be_immutable
 class LoginSuccessPage extends StatefulWidget {
@@ -15,6 +20,11 @@ class LoginSuccessPage extends StatefulWidget {
 
 class _LoginSuccessPageState extends State<LoginSuccessPage> {
   final User? user = Auth().currentUser;
+  static const int counter = 5;
+  double value = counter.toDouble();
+  Timer? timer;
+
+  bool get isLogin => widget.widgetTree.isLogin;
 
   // Future<void> signOut() async {
   //   await Auth().signOut();
@@ -31,33 +41,87 @@ class _LoginSuccessPageState extends State<LoginSuccessPage> {
     } else {
       text = "Continue to registration?";
     }
-    return Text("Welcome, ${user?.email ?? 'User email'}! $text");
+    return Text(
+      "Welcome, ${user?.email ?? 'User email'}! $text"
+      "\nRedirecting in $counter seconds...",
+      textAlign: TextAlign.center,
+    );
   }
 
-  Widget _continueButton(bool isLogin) {
-    return ElevatedButton(
-        onPressed: () {
-          setState(() {
-            String routeName = "";
-            if (isLogin) {
-              routeName = Routes.roomPage;
-            } else {
-              routeName = Routes.signUpPage;
-            }
-            Navigator.pushNamed(context, routeName);
-          });
-        },
-        child: const Text("Continue"));
-  }
+  // Widget _continueButton(bool isLogin) {
+  //   return ElevatedButton(
+  //       onPressed: () {
+  //         setState(() {
+  //           String routeName = "";
+  //           if (isLogin) {
+  //             routeName = Routes.roomPage;
+  //           } else {
+  //             routeName = Routes.signUpPage;
+  //           }
+  //           Navigator.pushNamed(context, routeName);
+  //         });
+  //       },
+  //       child: const Text("Continue"));
+  // }
 
 // SchedulerBinding.instance.addPostFrameCallback((_) {
 //   Navigator.of(context).pushNamed("login");
 // });
 
+  Widget _timerText() {
+    timer = Timer(const Duration(seconds: 1), () {
+      setState(() {
+        value--;
+      });
+    });
+    if (value <= 0) {
+      timer!.cancel();
+    }
+    return Text(
+      "${value.toInt()}",
+      style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
+    );
+  }
+
+  Widget _stackLoading() {
+    return sizedBoxChild(
+        200,
+        200,
+        Stack(
+          fit: StackFit.expand,
+          children: [
+            circleLoading(value / counter),
+            Center(
+              child: _timerText(),
+            )
+          ],
+        ));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: counter + 1), () {
+      setState(() {
+        String routeName = "";
+        if (isLogin) {
+          routeName = Routes.roomPage;
+        } else {
+          routeName = Routes.signUpPage;
+        }
+        Navigator.of(context).pushNamed(routeName);
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    timer!.cancel();
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool isLogin = widget.widgetTree.isLogin;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(isLogin ? 'Login Success' : 'Sign Up Success'),
@@ -65,10 +129,12 @@ class _LoginSuccessPageState extends State<LoginSuccessPage> {
       ),
       body: Container(
         alignment: Alignment.center,
-        padding: const EdgeInsets.all(30),
+        padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
         child: Column(children: <Widget>[
           _welcomeText(isLogin),
-          _continueButton(isLogin),
+          sizedBox(0, 50),
+          _stackLoading(),
+          //_continueButton(isLogin),
         ]),
       ),
     );
