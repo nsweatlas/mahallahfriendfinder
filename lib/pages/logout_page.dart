@@ -15,3 +15,7 @@ class _LogoutPageState extends State<LogoutPage> {
     return Scaffold();
   }
 }
+
+Future<void> signOut() async {
+  await Auth().signOut();
+}
