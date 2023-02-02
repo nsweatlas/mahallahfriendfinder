@@ -36,5 +36,3 @@ Widget circleLoading(double? value) {
     strokeWidth: 12,
   );
 }
-
-//linearLoading
