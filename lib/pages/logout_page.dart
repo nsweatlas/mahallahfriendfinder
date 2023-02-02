@@ -50,7 +50,7 @@ class _LogoutPageState extends State<LogoutPage> {
             Text(
                 "You have successfully logged out. Redirecting in $value seconds..."),
             sizedBox(0, 50),
-            linearLoading(value / counter), //don't forget to add in ui_widget
+            linearLoading(value / counter),
           ]),
         ));
   }
