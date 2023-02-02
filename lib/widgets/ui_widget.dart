@@ -35,3 +35,12 @@ Widget circleLoading(double? value) {
     strokeWidth: 12,
   );
 }
+
+Widget linearLoading(double? value) {
+  return LinearProgressIndicator(
+    value: value,
+    valueColor: const AlwaysStoppedAnimation(Color.fromARGB(255, 0, 124, 112)),
+    backgroundColor: const Color.fromARGB(255, 206, 206, 206),
+    minHeight: 12,
+  );
+}
