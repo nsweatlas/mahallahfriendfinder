@@ -19,7 +19,7 @@ class LoginSuccessPage extends StatefulWidget {
 }
 
 class _LoginSuccessPageState extends State<LoginSuccessPage> {
-  final User? user = Auth().currentUser;
+  final User? user = Auth().currentUser!;
   static const int counter = 5;
   double value = counter.toDouble();
   Timer? timer;

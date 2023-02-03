@@ -28,7 +28,9 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> signInWithEmailAndPassword() async {
     try {
       await Auth().signInWithEmailAndPassword(
-          email: _controllerEmail.text, password: _controllerPassword.text);
+          email: _controllerEmail.text,
+          password: _controllerPassword.text,
+          context: context);
     } on FirebaseAuthException catch (e) {
       setState(() {
         if (e.code == "user-not-found") {
@@ -46,7 +48,9 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> createUserWithEmailAndPassword() async {
     try {
       await Auth().createUserWithEmailAndPassword(
-          email: _controllerEmail.text, password: _controllerPassword.text);
+          email: _controllerEmail.text,
+          password: _controllerPassword.text,
+          context: context);
     } on FirebaseAuthException catch (e) {
       setState(() {
         if (e.code == "invalid-email") {

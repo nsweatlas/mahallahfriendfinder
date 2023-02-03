@@ -17,6 +17,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String room = "room";
   String dormBlock = "block";
   String dorm = "dorm";
+  //TextEditingController();
 
   @override
   Widget build(BuildContext context) {
