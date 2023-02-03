@@ -83,3 +83,32 @@ References
 * https://pub.dev/packages/date_time_picker
 
 
+## Work Delegation
+
+//SYAZA
+* Login page
+* Loginsuccess page
+* Widget 
+* Authentication class
+* Widget tree class
+* Main class
+* Routes class
+
+//ROWDA
+* Profile page
+* Room page
+* Room class
+* Database
+
+
+//AYUNI
+* Loginsignup page
+* Logout page
+* Widget
+* Student class
+* Database
+
+
+
+
+
