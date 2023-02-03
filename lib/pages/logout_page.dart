@@ -17,44 +17,42 @@ class _LogoutPageState extends State<LogoutPage> {
   double value = counter.toDouble();
   late Timer timer;
 
-  void _ timer() {
-    timer = Timer.periodic (const Duration(seconds:1), (timer) {
+  void _timer() {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
-        if (value <= 0){
+        if (value <= 0) {
           timer.cancel();
         }
         value--;
       });
-    })
+    });
   }
 
-  void _ timerPop (){
-    timer = Timer.periodic(Duration(seconds: counter + 1), (timer) {
-      Navigator.popUntil (context, ModalRoute.withName(Routes.loginPage));
-    }
+  void _timerPop() {
+    timer = Timer.periodic(const Duration(seconds: counter + 1), (timer) {
+      Navigator.popUntil(context, ModalRoute.withName(Routes.loginPage));
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     _timer();
     _timerPop();
     return Scaffold(
-      appBar: AppBar(
-        title: const Text ('Logout'),
-        centerTitle: true,
-      )
-      body: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
-        child: Column (children: <Widget>[
-          Text ("You have successfully logged out. Redirecting in $value seconds..."),
-          sizedBox(0,50),
-          linearLoading(value/counter),
-        ]),
-      )
-    );
-
-
-    )
+        appBar: AppBar(
+          title: const Text('Logout'),
+          centerTitle: true,
+        ),
+        body: Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
+          child: Column(children: <Widget>[
+            Text(
+                "You have successfully logged out. Redirecting in $value seconds..."),
+            sizedBox(0, 50),
+            linearLoading(value / counter),
+          ]),
+        ));
   }
 }
 

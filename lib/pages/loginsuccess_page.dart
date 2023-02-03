@@ -19,7 +19,7 @@ class LoginSuccessPage extends StatefulWidget {
 }
 
 class _LoginSuccessPageState extends State<LoginSuccessPage> {
-  final User? user = Auth().currentUser;
+  final User? user = Auth().currentUser!;
   static const int counter = 5;
   double value = counter.toDouble();
   Timer? timer;
@@ -43,31 +43,15 @@ class _LoginSuccessPageState extends State<LoginSuccessPage> {
     }
     return Text(
       "Welcome, ${user?.email ?? 'User email'}! $text"
-      "\nRedirecting in $counter seconds...",
+      "\nRedirecting in $value seconds...",
       textAlign: TextAlign.center,
     );
   }
 
-  // Widget _continueButton(bool isLogin) {
-  //   return ElevatedButton(
-  //       onPressed: () {
-  //         setState(() {
-  //           String routeName = "";
-  //           if (isLogin) {
-  //             routeName = Routes.roomPage;
-  //           } else {
-  //             routeName = Routes.signUpPage;
-  //           }
-  //           Navigator.pushNamed(context, routeName);
-  //         });
-  //       },
-  //       child: const Text("Continue"));
-  // }
-
-// SchedulerBinding.instance.addPostFrameCallback((_) {
-//   Navigator.of(context).pushNamed("login");
-// });
-
+  // SchedulerBinding.instance.addPostFrameCallback((_) {
+  //   Navigator.of(context).pushNamed("login");
+  // });
+  //timer to change countdown value
   Widget _timerText() {
     timer = Timer(const Duration(seconds: 1), () {
       setState(() {
@@ -101,6 +85,7 @@ class _LoginSuccessPageState extends State<LoginSuccessPage> {
   @override
   void initState() {
     super.initState();
+    //timer for Navigation push/pop
     Timer(const Duration(seconds: counter + 1), () {
       setState(() {
         String routeName = "";
