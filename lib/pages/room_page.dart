@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mahallahfriendfinder/auth.dart';
-import 'package:mahallahfriendfinder/pages/roommateprofile_page.dart';
 import '../firebase_settings.dart';
 import '../member_profile.dart';
 
@@ -81,7 +80,7 @@ class _RoomPageState extends State<RoomPage> {
                     minVerticalPadding: 5.0,
                     contentPadding: const EdgeInsets.all(10.0),
                     leading: const CircleAvatar(
-                      backgroundColor: Colors.green,
+                      backgroundColor: Colors.teal,
                       radius: 40.0,
                       child: Icon(Icons.person_outline_sharp),
                     ),

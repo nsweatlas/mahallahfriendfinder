@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../member_profile.dart';
 
-class MemberInformation extends StatefulWidget {
-  const MemberInformation({super.key, required this.memInfo});
+class RommateInformation extends StatefulWidget {
+  const RommateInformation({super.key, required this.memInfo});
   final MemberProfile memInfo;
   @override
-  State<MemberInformation> createState() => _MemberInformationState();
+  State<RommateInformation> createState() => _RommateInformationState();
 }
 
-class _MemberInformationState extends State<MemberInformation> {
+class _RommateInformationState extends State<RommateInformation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class _MemberInformationState extends State<MemberInformation> {
                   Container(
                     padding: const EdgeInsets.all(5.0),
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.green.shade100,
+                    color: Colors.teal.shade100,
                     child: Text(
                       'Name:',
                       style: Theme.of(context).textTheme.headline5,
@@ -66,7 +66,7 @@ class _MemberInformationState extends State<MemberInformation> {
                   Container(
                     padding: const EdgeInsets.all(5.0),
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.green.shade100,
+                    color: Colors.teal.shade100,
                     child: Text(
                       'Email:',
                       style: Theme.of(context).textTheme.headline5,
@@ -89,7 +89,7 @@ class _MemberInformationState extends State<MemberInformation> {
                   Container(
                     padding: const EdgeInsets.all(5.0),
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.green.shade100,
+                    color: Colors.teal.shade100,
                     child: Text(
                       'Phone:',
                       style: Theme.of(context).textTheme.headline5,
@@ -112,7 +112,7 @@ class _MemberInformationState extends State<MemberInformation> {
                   Container(
                     padding: const EdgeInsets.all(5.0),
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.green.shade100,
+                    color: Colors.teal.shade100,
                     child: Text(
                       'Gender:',
                       style: Theme.of(context).textTheme.headline5,
@@ -135,7 +135,7 @@ class _MemberInformationState extends State<MemberInformation> {
                   Container(
                     padding: const EdgeInsets.all(5.0),
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.green.shade100,
+                    color: Colors.teal.shade100,
                     child: Text(
                       'Matric Number:',
                       style: Theme.of(context).textTheme.headline5,
@@ -158,7 +158,7 @@ class _MemberInformationState extends State<MemberInformation> {
                   Container(
                     padding: const EdgeInsets.all(5.0),
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.green.shade100,
+                    color: Colors.teal.shade100,
                     child: Text(
                       'Room Number:',
                       style: Theme.of(context).textTheme.headline5,
@@ -181,7 +181,7 @@ class _MemberInformationState extends State<MemberInformation> {
                   Container(
                     padding: const EdgeInsets.all(5.0),
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.green.shade100,
+                    color: Colors.teal.shade100,
                     child: Text(
                       'Location:',
                       style: Theme.of(context).textTheme.headline5,
