@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class Auth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
+  var memberProfile;
+
   //user & state persistance
   User? get currentUser => _firebaseAuth.currentUser;
   Stream<User?> get authStateChange => _firebaseAuth.authStateChanges();
