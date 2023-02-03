@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mahallahfriendfinder/auth.dart';
+import 'package:mahallahfriendfinder/pages/roommateprofile_page.dart';
 import 'package:provider/provider.dart';
 import '../firebase_settings.dart';
 import '../member_profile.dart';
@@ -72,7 +73,7 @@ class _RoomPageState extends State<RoomPage> {
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MemberInformation(
+                        builder: (context) => RommateInformation(
                           memInfo: membersProfile,
                         ),
                       ),
