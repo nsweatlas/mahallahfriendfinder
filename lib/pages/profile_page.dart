@@ -3,7 +3,7 @@ import 'package:location/location.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mahallahfriendfinder/auth.dart';
-
+import 'package:provider/provider.dart';
 import '../firebase_settings.dart';
 import '../member_profile.dart';
 

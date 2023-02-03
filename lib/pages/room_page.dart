@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mahallahfriendfinder/auth.dart';
+import 'package:provider/provider.dart';
 import '../firebase_settings.dart';
 import '../member_profile.dart';
 
@@ -154,7 +155,10 @@ class _RoomPageState extends State<RoomPage> {
               ),
               Text(
                 'My Roommate',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
+                //'headline6' is deprecated and shouldn't be used.
+                //Use titleLarge instead.
+                //This feature was deprecated after v3.1.0-0.0.pre.
               ),
               const SizedBox(
                 height: 25.0,
