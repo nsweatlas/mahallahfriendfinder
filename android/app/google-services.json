@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "435381011779",
+    "firebase_url": "https://friendfinder-b358e-default-rtdb.firebaseio.com",
+    "project_id": "friendfinder-b358e",
+    "storage_bucket": "friendfinder-b358e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435381011779:android:ab2679d9ec9995c15f9bf6",
+        "android_client_info": {
+          "package_name": "com.example.mahallahfriendfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435381011779-ga3pgou1a08g704cd4lkm77iarioibp0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH685q7UZWc2Q2WOKXTcdYQmo4od_qhYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435381011779-ga3pgou1a08g704cd4lkm77iarioibp0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "435381011779-iul1o095m54o74otqpodnamvtn1d83su.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mahallahfriendfinder"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
