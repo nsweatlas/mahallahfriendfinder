@@ -35,11 +35,10 @@ LR
 graph
 A[FriendFinder] --> B[Login]
 A --> C[Register]
-A --> C(Email - Password)
-C --> D{User Authentication}
-D --> E((Room Screen))
-B --> F{Cloud Updated}
-F --> D[Room screen]
+B --> D{User Authentication}
+B --> E((Room Screen))
+C --> F{Cloud Updated}
+F --> E
 ```
 
 ### Widgets
