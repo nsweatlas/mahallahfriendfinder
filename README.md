@@ -33,7 +33,7 @@ Objective
 LR
 ```mermaid
 graph
-A[Login] --> B(Register)
+A[Login] --> B[Register]
 A --> C(Email - Password)
 C --> D{User Authentication}
 D --> E((Room Screen))
