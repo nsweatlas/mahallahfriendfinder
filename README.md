@@ -33,12 +33,13 @@ Objective
 LR
 ```mermaid
 graph
-A[FriendFinder] --> B[Login]
-A --> C[Register]
+A[FriendFinder] 
+A --> B[Login]
 B --> D{User Authentication}
-B --> E((Room Screen))
+A --> C[Register]
 C --> F{Cloud Updated}
-F --> E
+B --> E((Room Screen))
+F --> E ((Room Screen))
 ```
 
 ### Widgets
