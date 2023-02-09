@@ -8,12 +8,12 @@
 
 ### Introduction
 
-FriendFinder connects and shares your location with your roommates.
+FriendFinder is a mobile app that allows students to track the location of their friends. This app designed to provide users with real-time information about the whereabouts of their roommates. Also, giving them peace of mind and a sense of security by connecting and sharing your location with your roommates.
 
 ### Objectives
 
 Objective
-* Application for students living in dorms to know the location of their roomates when they students are worried about whereabouts and safety of roomates. 
+* Application for students living in dorms to know the location of their roomates when students are worried whereabouts and safety of roomates. 
 
 ### Features and Functionalities
 
@@ -34,11 +34,11 @@ LR
 ```mermaid
 graph
 A[Login] --> B(Register)
-A --> C(ABC)
+A --> C(Email - Password)
 C --> D{User Authentication}
-D --> E((Circle))
+D --> E((Room Screen))
 B --> F{Cloud Updated}
-F --> G[Room screen]
+F --> D[Room screen]
 ```
 
 ### Widgets
