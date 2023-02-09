@@ -38,8 +38,7 @@ A --> B[Login]
 B --> D{User Authentication}
 A --> C[Register]
 C --> F{Cloud Updated}
-F --> G[profile]
-G --> B
+F --> B
 D --> E((Room Screen))
 ```
 
